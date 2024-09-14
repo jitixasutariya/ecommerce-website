@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Button = styled.button`
   text-decoration: none;
   max-width: auto;
-  background-color: rgb(98 84 243);
+  background-color: rgb(255 134 0);
   color: rgb(255 255 255);
   padding: 1.4rem 2.4rem;
   border: none;
@@ -17,7 +17,7 @@ export const Button = styled.button`
 
   &:hover,
   &:active {
-    box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
+    box-shadow: 0 2rem 2rem 0 rgb(255 137 9 / 30);
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
     transform: scale(0.96);
   }

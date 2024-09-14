@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import SingleProduct from "./Pages/SingleProduct";
 import Cart from "./Pages/Cart";
+import SignUp from "./Componets/Header/Form/SignUp/SignUp";
 import ErrorPage from "./Pages/ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
@@ -37,6 +38,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/single-product/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />

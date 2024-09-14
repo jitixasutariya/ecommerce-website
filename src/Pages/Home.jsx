@@ -6,7 +6,7 @@ import Trusted from "../Componets/Trusted";
 
 const Home = () => {
   const data = {
-    name: "Ecommerce Store",
+    name: "E-Commerce Store",
   };
   return (
     <div className="home">

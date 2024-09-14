@@ -6,6 +6,7 @@ import {
   faCartShopping,
   faBars,
   faTimes,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -123,6 +124,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/sign-up"} className="navbar-link">
+              <FontAwesomeIcon icon={faUser} className="cart-icon" />
             </NavLink>
           </li>
           <li>

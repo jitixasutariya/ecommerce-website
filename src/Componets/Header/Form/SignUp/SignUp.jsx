@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "../../../../styles/Button";
 import styled from "styled-components";
-import { Button } from "../styles/Button";
 
-const Contact = () => {
+const SignUp = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+
+  function SignUp() {
+    let input = { name, email, password };
+    console.log(input);
+  }
+
   return (
     <Wrapper>
-      <h2 className="common-heading">Contact Page</h2>
+      <h2 className="common-heading">SignUp</h2>
       <div className="container">
-        <div className="contact-form">
-          <form
-            action="https://formspree.io/f/mqazyapr"
-            method="POST"
-            className="contact-inputs"
-          >
+        <div className="signup-form">
+          <form action={SignUp()} method="POST" className="signup-inputs">
             <input
               type="text"
               placeholder="Username"
               name="username"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
               autoComplete="off"
             />
@@ -24,28 +31,24 @@ const Contact = () => {
               type="email"
               placeholder="Email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="off"
             />
-            <textarea
-              name="message"
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setpassword(e.target.value)}
               required
-              placeholder="Enter your message"
               autoComplete="off"
-            ></textarea>
+              placeholder="Password"
+            />
             <Button>Send</Button>
           </form>
         </div>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6298.005358296!2d144.6824407756512!3d-37.88362003803328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad68f5837cb4a67%3A0x7d3674a29442b504!2s15%20Dunbarton%20Ave%2C%20Hoppers%20Crossing%20VIC%203029!5e0!3m2!1sen!2sau!4v1724218054367!5m2!1sen!2sau"
-        width="100%"
-        height="400"
-        style={{ border: "0", paddingTop: "50px" }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
     </Wrapper>
   );
 };
@@ -56,11 +59,11 @@ const Wrapper = styled.section`
   .container {
     margin-top: 6rem;
 
-    .contact-form {
+    .signup-form {
       max-width: 50rem;
       margin: auto;
 
-      .contact-inputs {
+      .signup-inputs {
         display: flex;
         flex-direction: column;
         gap: 3rem;
@@ -80,4 +83,4 @@ const Wrapper = styled.section`
     }
   }
 `;
-export default Contact;
+export default SignUp;
